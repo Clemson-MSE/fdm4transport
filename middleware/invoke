@@ -4,5 +4,5 @@
 # jupyter tool
 #
 /usr/bin/invoke_app "$@" -t diffusion2d \
-                         -C "start_jupyter -t -T @tool diffusion2d.ipynb" \
+                         -C "start_jupyter -t -T @tool UG\ Transport\ Phenomena.ipynb" \
                          -u anaconda-6
