@@ -3,6 +3,6 @@
 #
 # jupyter tool
 #
-/usr/bin/invoke_app "$@" -t fd4transport \
+/usr/bin/invoke_app "$@" -t fdm4tp \
                          -C "start_jupyter -t -T @tool Transport\ Phenomena.ipynb" \
                          -u anaconda-6
