@@ -14,6 +14,10 @@ Mia Maciorowski, Nikhil Karthikeyan, and [Ulf D. Schiller](https://www.clemson.e
 
 Maciorowski, M., N. Karthikeyan, and U. D. Schiller (2021), "Finite Difference Methods for Transport Phenomena", https://nanohub.org/resources/fdm4tp.
 
+## License
+
+The code contained in this repository is released under the terms of the BSD-3-Clause license. Please refer to the [LICENSE.md](LICENSE.md) file for specific provisions of the license.
+
 ## Acknowledgments
 
 This work was supported by the U.S. National Science Foundation under award DMR-1944942. Any opinions, findings and conclusions or recommendations expressed in this material are those of the authors(s) and do not necessarily reflect those of the National Science Foundation.
