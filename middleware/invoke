@@ -4,5 +4,5 @@
 # jupyter tool
 #
 /usr/bin/invoke_app "$@" -t fdm4tp \
-                         -C "start_jupyter -t -T @tool Transport\ Phenomena.ipynb" \
+                         -C "start_jupyter -t -A -T @tool Transport\ Phenomena.ipynb" \
                          -u anaconda-6
