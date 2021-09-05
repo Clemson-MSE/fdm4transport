@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib import cm, animation
 
-def animate3d(C,dt,frames=100,interval=50,cmin=0,cmax=1):
+def animate3d(C,dt,phi,frames=100,interval=50,cmin=0,cmax=1):
   """Creates an animation of a time series of scalar values on a 2D grid.
      The scalar field is plotted as a surface mesh."""
   step = len(C)//frames
@@ -24,8 +24,9 @@ def animate3d(C,dt,frames=100,interval=50,cmin=0,cmax=1):
 
   fig, ax = plt.subplots(subplot_kw={'projection': '3d'})
   surf = ax.plot_surface(x,y,C[0].reshape(n,n),cmap=cm.coolwarm,vmin=cmin,vmax=cmax)
-  time_text = ax.text2D(0.8, 0.9, 't=0 s', transform=ax.transAxes, fontsize=12)
-  fig.colorbar(surf)
+  time_text = ax.text2D(0.7, 0.9, 't=0 s', transform=ax.transAxes, fontsize=12)
+  phi_text = ax.text2D(0.1, 0.9, r'$\phi=$%.2f'%phi, transform=ax.transAxes, fontsize=12)
+  fig.colorbar(surf, label=r'$C/C_0$')
   ax.axes.set_zlim3d(bottom=cmin, top=1)
   ax.set_title('Concentration Profile')
   ax.set_xlabel('x')
@@ -36,7 +37,7 @@ def animate3d(C,dt,frames=100,interval=50,cmin=0,cmax=1):
   plt.close()
   return ani
 
-def animate2d(C,dt,cmin=1,cmax=1,frames=100,interval=50):
+def animate2d(C,dt,phi,cmin=1,cmax=1,frames=100,interval=50):
     """Creates an animation of a time series of scalar values on a 2D grid.
        The scalar field is plotted as a heatmap."""
     step = len(C)//frames
@@ -57,7 +58,8 @@ def animate2d(C,dt,cmin=1,cmax=1,frames=100,interval=50):
     fig, ax = plt.subplots()
     surf = ax.imshow(C[0].reshape(n,n),cmap=cm.coolwarm,vmin=cmin,vmax=cmax)
     time_text = ax.text(0.6, 0.9, 't=0 s', transform=ax.transAxes, color='w', fontsize=14)
-    fig.colorbar(surf)
+    phi_text = ax.text(0.05, 0.9, r'$\phi=$%.2f'%phi, transform=ax.transAxes, color='w', fontsize=14)
+    fig.colorbar(surf, label=r'$C/C_0$')
     ax.set_title('Concentration Profile')
     ax.set_xlabel('x')
     ax.set_ylabel('y')
